@@ -1,25 +1,9 @@
-body {
-  background-color: #ecf0f1;
-}
-
-.displayNone {
+.hidden {
   display: none;
-}
-
-.showing {
-  display: block;
 }
 
 .btn {
   cursor: pointer;
-}
-
-body {
-  color: #34495e;
-}
-
-.clicked {
-  color: #7f8c8d;
 }
 
 .bgImage {
@@ -32,13 +16,7 @@ body {
   opacity: 0.5;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-}
-
 .js-clock {
-  display: flex;
   justify-content: center;
   align-self: center;
 }

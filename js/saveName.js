@@ -2,17 +2,16 @@ const saveNameForm = document.querySelector(".js-saveNameForm"),
   saveNameInput = saveNameForm.querySelector("input"),
   greeting = document.querySelector(".js-greetings");
 
-const USER_LS = "currentUser",
-  SHOWING_CN = "showing";
+const USER_NAME = "userName",
+  HIDDEN = "hidden";
 
-function saveName(text) {
-  localStorage.setItem(USER_LS, text);
+function saveName(string) {
+  localStorage.setItem(USER_NAME, string);
 }
-function paintGreeting(text) {
-  saveNameForm.classList.remove("center");
-  saveNameForm.classList.remove(SHOWING_CN);
-  greeting.classList.add(SHOWING_CN);
-  greeting.innerText = `Hello ${text}`;
+function paintGreeting(string) {
+  saveNameForm.classList.add(HIDDEN);
+  greeting.classList.remove(HIDDEN);
+  greeting.innerText = `Hello ${string}`;
 }
 
 function handleSubmit(event) {
@@ -23,12 +22,13 @@ function handleSubmit(event) {
 }
 
 function askForName() {
-  saveNameForm.classList.add(SHOWING_CN);
+  greeting.classList.add(HIDDEN);
+  saveNameForm.classList.remove(HIDDEN);
   saveNameForm.addEventListener("submit", handleSubmit);
 }
 
 function loadName() {
-  const currentUser = localStorage.getItem(USER_LS);
+  const currentUser = localStorage.getItem(USER_NAME);
   if (currentUser === null) {
     askForName();
   } else {
