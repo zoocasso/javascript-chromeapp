@@ -1,9 +1,6 @@
-.hidden {
-  display: none;
-}
-
-.btn {
-  cursor: pointer;
+body{
+  font-family: Arial;
+  padding:15px;
 }
 
 .bgImage {
@@ -13,18 +10,70 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
-.js-clock {
-  justify-content: center;
-  align-self: center;
+.js-clock{
+  justify-content:space-between;
+  padding:15px;
 }
 
 .js-clock h1 {
-  font-size: 70px;
+  font-size: 30px;
 }
 
 .js-greetings {
-  font-size: 30px;
+  font-size: 40px;
+}
+
+input[placeholder="Add Task"]{
+  border:1.5px solid #000000;
+  border-radius:4px;
+  padding:3px 3px 2px 7px;
+  display:block;
+}
+
+.task-list{
+  font-weight: lighter;
+}
+
+.js-pendingList{
+  margin:0px;
+}
+
+.js-finishedList{
+  margin:0px;
+}
+
+.js-weather{
+  position: absolute;
+  bottom:0;
+  right:0;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+}
+
+.text-margin-padding{
+  margin:0px;
+  padding:15px 15px;
+}
+
+button{
+  margin: 5px;
+  padding:2px 20px;
+  border-radius: 10px;
 }
