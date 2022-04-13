@@ -63,6 +63,10 @@ input[placeholder="Add Task"]{
   display: flex;
 }
 
+.direction-column{
+  flex-direction:column;
+}
+
 .center {
   justify-content: center;
 }
