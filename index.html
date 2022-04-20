@@ -5,29 +5,28 @@
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <div class="js-clock display-flex">
-        <h2>welcome</h2>
-        <h1 class="text-margin-padding">00:00</h1>
-    </div>
-
-    <div class="display-flex center">
-        <form class="js-saveNameForm hidden">
-            <input type="text" placeholder="What is your name?"/>
-        </form>
-        <h4 class="js-greetings hidden text-margin-padding"></h4>
-    </div>
-
-    <div class="display-flex center direction-column text-margin-padding">
-        <h1>Tasks</h1>
-        <form class="js-toDoForm">
-            <input type="text" placeholder="Add Task"/>
-        </form>
-    <h3 class="text-margin-padding task-list">pending</h3>
-    <ul class="js-pendingList"></ul>
-    <h3 class="text-margin-padding task-list">finished</h3>
-    <ul class="js-finishedList"></ul>
-    </div>
-    <h4 class="js-weather text-margin-padding"></h4>
+        <div class="js-clock">
+            <h1>00:00</h1>
+        </div>
+        <div class="header">
+            <div class="leftBox margin-padding">
+                <h1>Tasks</h1>
+                <form class="js-toDoForm">
+                    <input type="text" placeholder="Add Task"/>
+                </form>
+                <h3 class="margin-padding">pending</h3>
+                <ul class="js-pendingList"></ul>
+                <h3 class="margin-padding">finished</h3>
+                <ul class="js-finishedList"></ul>
+            </div>
+            <div class="rightBox margin-padding">
+                <form class="js-saveNameForm hidden">
+                    <input type="text" placeholder="What is your name?"/>
+                </form>
+                <h4 class="js-greetings hidden margin-padding text-center"></h4>
+            </div>
+        </div>
+        <h4 class="js-weather margin-padding"></h4>
     
 
     <script src="js/clock.js"></script>

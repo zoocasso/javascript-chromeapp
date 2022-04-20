@@ -1,6 +1,22 @@
 body{
   font-family: Arial;
-  padding:15px;
+  padding:10px;
+}
+
+.header{
+  display:flex;
+}
+
+.leftBox{
+  width: 40%;
+  border: solid 1px;
+  border-radius: 20px;
+}
+
+.rightBox{
+  width:60%;
+  border: solid 1px;
+  border-radius: 20px;
 }
 
 .bgImage {
@@ -14,35 +30,35 @@ body{
 }
 
 .js-clock{
-  justify-content:space-between;
-  padding:15px;
+  padding:5px;
+  text-align: center;
 }
 
 .js-clock h1 {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .js-greetings {
   font-size: 40px;
 }
 
-input[placeholder="Add Task"]{
+.task{
   border:1.5px solid #000000;
-  border-radius:4px;
-  padding:3px 3px 2px 7px;
-  display:block;
-}
-
-.task-list{
-  font-weight: lighter;
+  border-radius:10px;
 }
 
 .js-pendingList{
-  margin:0px;
+  margin:2px;
 }
 
 .js-finishedList{
-  margin:0px;
+  margin:2px;
+}
+
+button{
+  margin: 5px;
+  padding:2px 20px;
+  border-radius: 10px;
 }
 
 .js-weather{
@@ -55,29 +71,12 @@ input[placeholder="Add Task"]{
   display: none;
 }
 
-.btn {
-  cursor: pointer;
-}
-
-.display-flex{
-  display: flex;
-}
-
-.direction-column{
-  flex-direction:column;
-}
-
-.center {
-  justify-content: center;
-}
-
-.text-margin-padding{
+.margin-padding{
   margin:0px;
   padding:15px 15px;
 }
 
-button{
-  margin: 5px;
-  padding:2px 20px;
-  border-radius: 10px;
+
+.text-center{
+  text-align: center;
 }
