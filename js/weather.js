@@ -10,7 +10,6 @@ function getWeather(lat,lng){
     }).then(function(json){
         const temperature = json.main.temp;
         const place = json.name;
-        console.log(json);
         weather.innerText = `현재 위치 : ${place} \n 현재 온도 : ${Math.floor(temperature*10)/10}°C `;
     });
 }
