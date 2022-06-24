@@ -5,10 +5,15 @@ const pendingList = document.querySelector(".js-pendingList"),
   finishedList = document.querySelector(".js-finishedList");
 let toDos = [];
 let dones = [];
-let toDoId = parseInt(localStorage.getItem("toDo_id"))-JSON.parse(localStorage.getItem("list")).length;
-let doneId = parseInt(localStorage.getItem("done_id"))-JSON.parse(localStorage.getItem("done")).length;
-if(toDoId == null) toDoId = 0;
-if(doneId == null) doneId = 0;
+let toDoId = 0;
+let doneId = 0;
+if(localStorage.getItem("toDo_id")!==null){
+  toDoId = parseInt(localStorage.getItem("toDo_id"))-JSON.parse(localStorage.getItem("list")).length;
+}
+
+if(localStorage.getItem("done_id")!==null){
+  doneId = parseInt(localStorage.getItem("done_id"))-JSON.parse(localStorage.getItem("done")).length;
+}
 
 function deleteDone(event) {
   const btnLi = event.target.parentNode;

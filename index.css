@@ -9,14 +9,12 @@ body{
 
 .leftBox{
   width: 40%;
-  height: 50vh;
   border: 1px solid;
   border-radius: 20px;
 }
 
 .rightBox{
   width:60%;
-  height: 50vh;
   border: 1px solid;
   border-radius: 20px;
 }
@@ -49,14 +47,6 @@ body{
   border-radius:10px;
 }
 
-.js-pendingList{
-  margin:2px;
-}
-
-.js-finishedList{
-  margin:2px;
-}
-
 button{
   margin: 5px;
   padding:2px 20px;
@@ -75,7 +65,7 @@ button{
 
 .margin-padding{
   margin:0px;
-  padding:15px;
+  padding:25px;
 }
 
 
