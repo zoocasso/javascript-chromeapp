@@ -3,10 +3,12 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const pendingList = document.querySelector(".js-pendingList"),
   finishedList = document.querySelector(".js-finishedList");
-
 let toDos = [];
 let dones = [];
-
+let toDoId = parseInt(localStorage.getItem("toDo_id"))-JSON.parse(localStorage.getItem("list")).length;
+let doneId = parseInt(localStorage.getItem("done_id"))-JSON.parse(localStorage.getItem("done")).length;
+if(toDoId == null) toDoId = 0;
+if(doneId == null) doneId = 0;
 
 function deleteDone(event) {
   const btnLi = event.target.parentNode;
@@ -27,7 +29,7 @@ function backToPending(event) {
   const finishiedDones = backToPendingDonesArr[0].text;
   const donesObject = {
     text: finishiedDones,
-    id: toDos.length + 1
+    id: toDoId
   };;
   toDos.push(donesObject);
   const deleteDones = dones.filter(function (done) {
@@ -51,12 +53,21 @@ function paintFinishedList(text) {
   li.appendChild(span);
   li.appendChild(delBtn);
   li.appendChild(shiftBackBtn);
-  li.id = dones.length;
+  li.id = doneId;
+  doneId = doneId + 1;
+  saveDoneId();
   finishedList.appendChild(li);
   delBtn.addEventListener("click", deleteDone);
   shiftBackBtn.addEventListener("click", backToPending);
 }
 
+function saveToDoId(){
+  localStorage.setItem("toDo_id",JSON.stringify(toDoId))
+}
+
+function saveDoneId(){
+  localStorage.setItem("done_id",JSON.stringify(doneId))
+}
 
 function saveTodos() {
   localStorage.setItem("list", JSON.stringify(toDos));
@@ -86,7 +97,7 @@ function finishedToDo(event) {
   const finishiedToDos = finishedToDosArr[0].text;
   const toDosObject = {
     text: finishiedToDos,
-    id: dones.length + 1
+    id: doneId
   };;
   dones.push(toDosObject);
   const cleanToDos = toDos.filter(function (toDo) {
@@ -112,8 +123,10 @@ function paintPendingList(text) {
   li.appendChild(span);
   li.appendChild(delBtn);
   li.appendChild(checkBtn);
-  li.id = toDos.length;
+  li.id = toDoId;
+  toDoId = toDoId + 1;
   pendingList.appendChild(li);
+  saveToDoId();
   delBtn.addEventListener("click", deleteToDo);
   checkBtn.addEventListener("click", finishedToDo);
 }
@@ -138,12 +151,13 @@ function loadForm() {
   }
 }
 
+
 function handleSubmit(event) {
   event.preventDefault();
   const currentToDoValue = toDoInput.value;
   const toDosObject = {
     text: currentToDoValue,
-    id: toDos.length + 1
+    id: toDoId
   };
   toDos.push(toDosObject);
   toDoInput.value = "";
